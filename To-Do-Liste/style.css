@@ -87,3 +87,8 @@ button {
     outline: none;
 
 }
+
+.noshowbutton {
+    height: 0;
+    width: 0;
+}
