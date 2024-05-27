@@ -23,9 +23,9 @@ function Elementehinzufuegen(html) {
     return template.content.firstElementChild;
 }
 // 
+const EingabeFeld = Elementehinzufuegen('<input placeholder="Aufgabe" class="TextEingabe" class="inline" type="text">')
 KreuzAufgabeHinzufuegen.addEventListener("click", ()=>{
-//    KreuzAufgabeHinzufuegen.remove();
-    const EingabeFeld = Elementehinzufuegen('<input placeholder="Aufgabe" class="TextEingabe" class="inline" type="text">')
-    EingabeFeld.replaceChild(KreuzAufgabeHinzufuegen, EingabeFeld.childNodes)
+//    KreuzAufgabeHinzufuegen.remove();   
+    KreuzAufgabeHinzufuegen.replaceWith(EingabeFeld);
 })
 

@@ -73,7 +73,17 @@ button {
 
 /* Text EingabeFeld durch js hinzugefügt */
 
-.TextEingabe[type="text"], textarea {
-    box-sizing: border-box;
-    background-color: #414141;
+.TextEingabe {
+    width: 98%;
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+    line-height: 38px; 
+    margin-left: 2%;
+    color: white;
+}
+
+.TextEingabe:focus {
+    outline: none;
+
 }
