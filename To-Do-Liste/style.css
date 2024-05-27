@@ -28,9 +28,11 @@ h1 {
 .inline {
     display: inline;
 }
+
 .AufgabeDazu, .Aufgabe, .ErledigteAufgabe {
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .Aufgabe img, .ErledigteAufgabe img {
@@ -40,22 +42,38 @@ h1 {
 
 .KreisleerButton {
     border-radius: 50%;
-    padding: 12px;
+    height: 24px;
+    width: 24px;
     border: #BDBDBD solid 1px;
     background-color: #414141;
 }
 
-p, img, .KreisleerButton {
+p, img, .Aufgabe {
     margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
 }
 
 .ErledigteAufgabe p {
     text-decoration: line-through;
     text-decoration-color: black;
     text-decoration-thickness: 3px;
+}
+
+.Muelleimer {
+    margin-left: 700px;
+}
+
+/* Text EingabeFeld durch js hinzugefügt */
+
+.TextEingabe[type="text"], textarea {
+    box-sizing: border-box;
+    background-color: #414141;
 }
