@@ -22,6 +22,7 @@ function Elementehinzufuegen(html) {
     template.innerHTML = html.trim();
     return template.content.firstElementChild;
 }
+/*
 // 
 const EingabeFeld = Elementehinzufuegen('<form id="myForm"><input placeholder="Aufgabe" class="TextEingabe" class="inline" type="text"></form><input type="submit" class="noshowbutton">')
 KreuzAufgabeHinzufuegen.addEventListener("click", ()=>{
@@ -29,13 +30,29 @@ KreuzAufgabeHinzufuegen.addEventListener("click", ()=>{
     KreuzAufgabeHinzufuegen.replaceWith(EingabeFeld);
 })
 
-document.getElementsByClassName("TextEingabe")[0].addEventListener("keypress", (event)=>{
+const EingabeAuslesen = document.getElementsByClassName("TextEingabe")[0];
+EingabeAuslesen.addEventListener("keydown", (event)=>{
     if (event.key === "Enter") {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
 //        document.getElementsByClassName("noshowbutton")[0].click();
-        let inputWert = document.getElementsByClassName("TextEingabe").value;
+        let inputWert = EingabeAuslesen.value;
         console.log("Eingabe:", inputWert);
       }
 })
+*/
+const EingabeFeld = Elementehinzufuegen('<form id="myForm"><input placeholder="Aufgabe" class="TextEingabe" class="inline" type="text"></form><input type="submit" class="noshowbutton">');
+
+KreuzAufgabeHinzufuegen.addEventListener("click", () => {
+    KreuzAufgabeHinzufuegen.replaceWith(EingabeFeld);
+    
+    const EingabeAuslesen = document.getElementsByClassName("TextEingabe")[0];
+    EingabeAuslesen.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            let inputWert = EingabeAuslesen.value;
+            console.log("Eingabe:", inputWert);
+        }
+    });
+});
