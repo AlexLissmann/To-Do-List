@@ -40,6 +40,17 @@ let CounterEingabeMenge = 0;
             console.log(CounterEingabeMenge);
             localStorage.setItem("AufgabeEingabeNummer" + CounterEingabeMenge, inputWert);
             console.log(localStorage.getItem("AufgabeEingabeNummer3"));
+
+            //Neue Zeile generieren
+
+            const ZeileMitAufgabe = Elementehinzufuegen('<div class="Zeile" class="ZeileMitAufgabe"><div class="Aufgabe"><button class="KreisleerButton" class="inline"></button><p class="AufgabeText" class="inline"></p><button class="Muelleimer"><img class="inline" src="src/whitebin.png" alt="whitebin"></button></div></div>')
+            const Anhaengen = document.getElementsByClassName("BereichMitAufgaben")[0];
+            Anhaengen.append(ZeileMitAufgabe);
+
+            // Aufgabe in neu generierte Zeile geben
+            window.addEventListener('DOMContentLoaded', function() {
+            document.getElementsByClassName("AufgabeText")[0].insertAdjacentHTML = inputWert;
+            })
         }
     })
 })
