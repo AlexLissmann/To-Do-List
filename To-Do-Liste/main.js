@@ -43,14 +43,30 @@ let CounterEingabeMenge = 0;
 
             //Neue Zeile generieren
 
-            const ZeileMitAufgabe = Elementehinzufuegen('<div class="Zeile" class="ZeileMitAufgabe"><div class="Aufgabe"><button class="KreisleerButton" class="inline"></button><p class="AufgabeText" class="inline">asdfgj</p><button class="Muelleimer"><img class="inline" src="src/whitebin.png" alt="whitebin"></button></div></div>')
+            const ZeileMitAufgabe = Elementehinzufuegen('<div class="Zeile" class="ZeileMitAufgabe"><div class="Aufgabe"><button class="dynamischeKlasse KreisleerButton inline"></button><p class="AufgabeText" class="inline">asdfgj</p><button class="Muelleimer"><img class="inline" src="src/whitebin.png" alt="whitebin"></button></div></div>')
             const Anhaengen = document.getElementsByClassName("BereichMitAufgaben")[0];
             Anhaengen.append(ZeileMitAufgabe);
 
+            //dynamische Klasse hinzufügen
+            
+            const dynamischKreisLeerButton = document.getElementsByClassName("dynamischeKlasse")[0]
+            dynamischKreisLeerButton.classList.remove("dynamischeKlasse");
+            dynamischKreisLeerButton.classList.add("KreisLeerButtonNummer" + CounterEingabeMenge);
+            console.log(dynamischKreisLeerButton.classList.contains("KreisLeerButtonNummer1"));
+            
             // Aufgabe in neu generierte Zeile geben
+            
             document.getElementsByClassName("AufgabeText")[0].innerHTML = inputWert;
+            
             //EingabeFeld resetten
+
             document.getElementsByClassName("myForm")[0].reset();
+
+            
         }
     })
 })
+
+//Aufgbe abhaken
+
+const AbhakenDerAufgabe = document.getElementsByClassName("KreisleetButton")
