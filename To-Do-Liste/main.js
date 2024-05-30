@@ -24,7 +24,7 @@ function Elementehinzufuegen(html) {
 }
 // 
 const EingabeFeld = Elementehinzufuegen('<form class="myForm"><input placeholder="Aufgabe" class="TextEingabe" class="inline" type="text"></form><input type="submit" class="noshowbutton">');
-
+let CheckNeueZeileGeneriert = false;
 KreuzAufgabeHinzufuegen.addEventListener("click", () => {
     KreuzAufgabeHinzufuegen.replaceWith(EingabeFeld);
 
@@ -53,7 +53,7 @@ let CounterEingabeMenge = 0;
             dynamischKreisLeerButton.classList.remove("dynamischeKlasse");
             dynamischKreisLeerButton.classList.add("KreisLeerButtonNummer" + CounterEingabeMenge);
             console.log(dynamischKreisLeerButton.classList.contains("KreisLeerButtonNummer1"));
-            
+
             // Aufgabe in neu generierte Zeile geben
             
             document.getElementsByClassName("AufgabeText")[0].innerHTML = inputWert;
@@ -62,11 +62,21 @@ let CounterEingabeMenge = 0;
 
             document.getElementsByClassName("myForm")[0].reset();
 
+            //Neue Zeile generiert = true
             
+            let CheckNeueZeileGeneriert = true;
         }
     })
 })
 
 //Aufgbe abhaken
 
-const AbhakenDerAufgabe = document.getElementsByClassName("KreisleetButton")
+if (CheckNeueZeileGeneriert == true) {
+    console.log("hahha");
+    const AbhakenDerAufgabe = document.getElementsByClassName("KreisleerButton")[0]
+    AbhakenDerAufgabe.addEventListener("click", ()=> {
+    console.log("hahha")
+
+
+    })
+}   
